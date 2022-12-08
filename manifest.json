@@ -1,0 +1,22 @@
+{
+  "name": "Celebrate LeetCode",
+  "version": "1.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "./src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["./src/scripts/LeetCode.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*.mp3"],
+      "matches": ["https://leetcode.com/*"]
+    }
+  ],
+  "permissions": ["activeTab", "storage"]
+}
